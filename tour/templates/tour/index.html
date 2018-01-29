@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trips</title>
+  </head>
+  <body background="wall.png">
+    <h1>Trips</h1>
+{#    <li>#}
+{#    {% for trip in trips %}#}
+{#         <img src="{{ trip.trip_logo }}">#}
+{#         <ul>{{ trip.destination}} - {{ trip.price }} - {{ trip.no_of_days }}  </ul>#}
+{#    {% endfor %}#}
+{#    </li>#}
+    {% for trip in trips %}
+            <div style="border: dashed" >
+            <h5>{{ trip.destination }}</h5>
+            <img src="{{ trip.trip_logo }}" >
+            <h6>{{ trip.transport }}</h6> <h6 style="color: darkred"> {{ trip.price }}</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Aliquid architecto at
+                    consectetur consequuntur corporis culpa
+                cupiditate dolorem, ducimus est eveniet
+                maiores minima natus odio quis quo unde
+                veniam voluptates. Deleniti.
+            </p>
+            <a href="{% url 'tour:detail' trip.trip_id %}"> View all offers </a>
+            </div>
+
+        {% endfor %}
+
+  </body>
+</html>
